@@ -5,7 +5,7 @@ import Code from "phosphor-astro/Code.astro";
 import Database from "phosphor-astro/Database.astro";
 import Java from "phosphor-astro/Coffee.astro";
 
-import Personal from "./public/personal.jpg";
+// import Personal from "./public/personal.jpg";
 
 // import React from "./public/react.png";
 // import Javascript from "./public/Javascript.png";
@@ -51,25 +51,25 @@ const hiddenCards = [
 	{
 		id: "React",
 		title: "React",
-		image: "./public/react.png",
+		image: "./react.png",
 		type: "image",
 	},
 	{
 		id: "Javascript",
 		title: "Javascript",
-		image: "./public/Javascript.png",
+		image: "./Javascript.png",
 		type: "image",
 	},
 	{
 		id: "Tailwind",
 		title: "Tailwind",
-		image: "./public/tailwind.png",
+		image: "./tailwind.png",
 		type: "image",
 	},
 	{
 		id: "Astro",
 		title: "Astro",
-		image: "./public/astro.jpg",
+		image: "./astro.jpg",
 		type: "image",
 	},
 	{
@@ -194,7 +194,7 @@ const hiddenCards = [
 >
 	<div class="flex flex-col mt-5 lg:w-1/3 gap-5">
 		<Image
-			src={Personal}
+			src="./personal.jpg"
 			alt="personal"
 			loading="eager"
 			fetchpriority="high"
