@@ -1,7 +1,7 @@
 ---
 import AppWindow from "phosphor-astro/AppWindow.astro";
 import CaretRight from "phosphor-astro/CaretRight.astro";
-
+import Ticket from "phosphor-astro/Ticket.astro";
 const proyects = [
     {
         title: "Dynamic Solutions",
@@ -9,14 +9,20 @@ const proyects = [
         src: "https://beta.dynamicsolutions.tech/",
         icon: AppWindow,
     },
+    {
+        title: "Recepsionista en WonderWorks (Orlando, FL)",
+        description: "Trabajé en WonderWorks como recepcionista durante 3 meses.",
+        src: "https://www.wonderworksonline.com/orlando/",
+        icon: Ticket,
+    },
 ];
 ---
 
-<div class="flex flex-col text-white pt-20" id="proyects">
-    <div class="flex flex-col w-[90%] max-w-7xl m-auto">
+<div class="flex flex-col h-[500px] text-white py-20" id="proyects">
+    <div class="flex flex-col gap-4 w-[90%] max-w-7xl mx-auto">
         {
             proyects.map((proyect) => (
-                <div class="flex flex-col rounded-xl bg-white/5 backdrop-blur-sm border border-white/5 p-2 h-[120px]">
+                <div class="flex flex-col rounded-xl bg-white/5 backdrop-blur-sm border border-white/5 p-2 h-[120px] hover:scale-105 duration-300">
                     <a
                         href={proyect.src}
                         target="_blank"
