@@ -5,17 +5,9 @@ import Code from "phosphor-astro/Code.astro";
 import Database from "phosphor-astro/Database.astro";
 import Java from "phosphor-astro/Coffee.astro";
 
-// import Personal from "./public/personal.jpg";
-
-// import React from "./public/react.png";
-// import Javascript from "./public/Javascript.png";
-// import Tailwind from "./public/tailwind.png";
-// import Astro from "./public/astro.jpg";
-
 import InstagramLogo from "phosphor-astro/InstagramLogo.astro";
 import WhatsappLogo from "phosphor-astro/WhatsappLogo.astro";
 import CaretRight from "phosphor-astro/CaretRight.astro";
-import { Image } from "astro:assets";
 
 const Cards = [
 	{
@@ -69,7 +61,7 @@ const hiddenCards = [
 	{
 		id: "Astro",
 		title: "Astro",
-		image: "./astro.jpg",
+		image: "./astro.png",
 		type: "image",
 	},
 	{
@@ -110,9 +102,7 @@ const hiddenCards = [
 
 	.hiddenCard {
 		opacity: 0;
-		transition:
-			opacity 0.3s ease,
-			transform 0.3s ease;
+		transition: opacity 0.3s ease, transform 0.3s ease;
 		transform: translateY(20px);
 	}
 
@@ -161,10 +151,7 @@ const hiddenCards = [
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		color: #e0e0e0;
 		cursor: pointer;
-		transition:
-			transform 0.3s ease,
-			background 0.3s ease,
-			color 0.3s ease;
+		transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 	}
 
 	.hiddenTrigger:hover {
@@ -189,64 +176,49 @@ const hiddenCards = [
 	});
 </script>
 
-<div
-	class="flex flex-col lg:flex-row w-[90%] text-white min-h-[700px] mt-10 m-auto bg-[#1a1a1a]/40 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl p-6 gap-8"
->
+<div class="flex flex-col lg:flex-row w-[90%] text-white min-h-[700px] mt-10 m-auto bg-[#1a1a1a]/40 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl p-6 gap-8">
 	<div class="flex flex-col mt-5 lg:w-1/3 gap-5">
-		<Image
+		<img
 			src="./personal.jpg"
 			alt="personal"
-			loading="eager"
-			fetchpriority="high"
-			class="object-cover size-96 rounded-full border-4 border-white/10 shadow-2xl md:hover:scale-105 transition-transform duration-300"
+			class="w-56 lg:w-96 rounded-full object-cover border-4 border-white/10 shadow-2xl md:hover:scale-105 transition-transform duration-300"
 		/>
 		<p class="text-md text-white/80">
-			Estudiante de primer año en Ciencias de Datos en la UBA,
-			desarrollador web y apasionado por la tecnología. Juego al rugby en
-			Deportiva Francesa, deporte que me enseñó a ser parte de un equipo y
-			ser una persona honesta.
+			Estudiante de primer año en Ciencias de Datos en la UBA, desarrollador web y apasionado por la tecnología. Juego al rugby en Deportiva Francesa, deporte que me enseñó a ser parte de un equipo y ser una persona honesta.
 		</p>
 	</div>
 
 	<div class="flex flex-col justify-center gap-8 p-4 lg:w-2/3">
-		<h1
-			class="text-4xl lg:text-6xl font-bold text-white bg-clip-text text-transparent"
-		>
+		<h1 class="text-4xl lg:text-6xl font-bold  text-white bg-clip-text text-transparent">
 			Franco Lacava Botte
 		</h1>
 		<div class="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
-			{
-				Cards.map((card) => (
-					<div
-						class="card md:hover:scale-105 transition-transform duration-300 "
-						id={`${card.id}`}
-						onclick={
-							card.ref && `window.location.href='${card.ref}'`
-						}
-					>
-						<card.icon class="cardIcon size-6" />
-						<p>{card.title}</p>
-						{(card.ref || card.id === "web") && (
-							<CaretRight class="cardIcon size-6 ml-auto" />
-						)}
-					</div>
-				))
-			}
+			{Cards.map((card) => (
+				<div
+					class="card md:hover:scale-105 transition-transform duration-300 "
+					id={`${card.id}`}
+					onclick={
+						card.ref && `window.location.href='${card.ref}'`
+					}
+				>
+					<card.icon class="cardIcon size-6" />
+					<p>{card.title}</p>
+					{(card.ref || card.id === "web") && <CaretRight class="cardIcon size-6 ml-auto" />}
+				</div>
+			))}
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 w-full gap-4 mt-6">
-			{
-				hiddenCards.map((card) => (
-					<div class="card hiddenCard md:hover:scale-105 transition-transform duration-300">
-						{card.icon ? (
-							<card.icon class="cardIcon size-6" />
-						) : (
-							<img src={card.image} alt={card.title} />
-						)}
-						<p>{card.title}</p>
-					</div>
-				))
-			}
+			{hiddenCards.map((card) => (
+				<div class="card hiddenCard md:hover:scale-105 transition-transform duration-300">
+					{card.icon ? (
+						<card.icon class="cardIcon size-6" />
+					) : (
+						<img src={card.image} alt={card.title} />
+					)}
+					<p>{card.title}</p>
+				</div>
+			))}
 		</div>
 
 		<div class="hiddenTrigger" onclick={`window.location.href='#proyects'`}>
