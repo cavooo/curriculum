@@ -7,10 +7,10 @@ import Java from "phosphor-astro/Coffee.astro";
 
 import Personal from "./public/personal.jpg";
 
-import React from "./public/react.png";
-import Javascript from "./public/Javascript.png";
-import Tailwind from "./public/tailwind.png";
-import Astro from "./public/astro.jpg";
+// import React from "./public/react.png";
+// import Javascript from "./public/Javascript.png";
+// import Tailwind from "./public/tailwind.png";
+// import Astro from "./public/astro.jpg";
 
 import InstagramLogo from "phosphor-astro/InstagramLogo.astro";
 import WhatsappLogo from "phosphor-astro/WhatsappLogo.astro";
@@ -51,25 +51,25 @@ const hiddenCards = [
 	{
 		id: "React",
 		title: "React",
-		image: React,
+		image: "./public/react.png",
 		type: "image",
 	},
 	{
 		id: "Javascript",
 		title: "Javascript",
-		image: Javascript,
+		image: "./public/Javascript.png",
 		type: "image",
 	},
 	{
 		id: "Tailwind",
 		title: "Tailwind",
-		image: Tailwind,
+		image: "./public/tailwind.png",
 		type: "image",
 	},
 	{
 		id: "Astro",
 		title: "Astro",
-		image: Astro,
+		image: "./public/astro.jpg",
 		type: "image",
 	},
 	{
@@ -241,7 +241,7 @@ const hiddenCards = [
 						{card.icon ? (
 							<card.icon class="cardIcon size-6" />
 						) : (
-							<img src={card.image.src} alt={card.title} />
+							<img src={card.image} alt={card.title} />
 						)}
 						<p>{card.title}</p>
 					</div>
